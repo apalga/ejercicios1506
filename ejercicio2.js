@@ -24,12 +24,20 @@ function pasarAegresado(alumnosRegulares, alumnosEgresados, nombreAlumno) {
             msg: "Ya no existen alumnos regulares"
         };
     }
-    const indiceAlumno = alumnosRegulares.indexOf(nombreAlumno);
 
-    if (indiceAlumno !== -1) {
-        alumnosRegulares.splice(indiceAlumno, 1);
+
+    const i = alumnosRegulares.indexOf(nombreAlumno);
+
+    if (i !== -1) {
+        alumnosRegulares.splice(i, 1);
         alumnosEgresados.unshift(nombreAlumno);
     }
+
+    else{
+
+        return false;
+    }
+
 
     return alumnosEgresados;
 }
